@@ -22,15 +22,14 @@ $heroVideo = get_sub_field('background_video');?>
           src="<?php echo $heroImage['url']; ?>"
           title="<?php echo $heroImage['title']; ?>"
         />
+        <?php if(get_sub_field('background_video')):?>
         <iframe
           frameborder="0"
           mozallowfullscreen=""
           src="https://player.vimeo.com/video/<?php echo $heroVideo;?>?background=1&amp;autoplay=1&amp;loop=1&amp;byline=0&amp;title=0"
           webkitallowfullscreen=""
         ></iframe>
-        <?php $heroImage = '';
-        $heroVideo = '';
-        ?>
+    <?php endif;?>
       </div>
       <div class="page__grid">
         <div class="component__homepage-hero__content grid__location--content">
