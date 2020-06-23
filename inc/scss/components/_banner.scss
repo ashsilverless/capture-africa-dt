@@ -1,0 +1,58 @@
+////
+/// Banner
+////
+
+@use '../layout/background-media';
+@use '../layout/typography';
+@use '../utilities/media-query' as mediaQuery;
+
+$_namespace: 'banner';
+
+.component__#{$_namespace} {
+  // margin-top: 80px;
+}
+
+.component__#{$_namespace}__hero {
+}
+
+.component__#{$_namespace}__hero__container {
+  position: relative;
+}
+
+.component__#{$_namespace}__hero__background {
+  @extend %background-media !optional;
+}
+
+.component__#{$_namespace}__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  z-index: 1;
+
+  @include mediaQuery.minWidth(540px) {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  a {
+    margin-top: 20px;
+  }
+}
+
+.component__#{$_namespace}__content__title,
+.component__#{$_namespace}__content__sub-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.component__#{$_namespace}__content__title {
+  @extend %type__scale--4;
+}
+
+.component__#{$_namespace}__content__sub-title {
+  @extend %type__scale--5;
+}

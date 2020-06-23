@@ -1,0 +1,186 @@
+//
+// Sanitize.css - Forms
+//
+
+// Remove the margin on controls in Safari.
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+// 1. Show the overflow in IE.
+// 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+
+button {
+  overflow: visible; // 1
+  text-transform: none; // 2
+}
+
+// Correct the inability to style buttons in iOS and Safari.
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+// 1. Change the inconsistent appearance in all browsers (opinionated).
+// 2. Correct the padding in Firefox.
+
+fieldset {
+  border: 1px solid #a0a0a0; // 1
+  padding: 0.35em 0.75em 0.625em; // 2
+}
+
+// Show the overflow in Edge 18- and IE.
+
+input {
+  overflow: visible;
+}
+
+// 1. Correct the text wrapping in Edge 18- and IE.
+// 2. Correct the color inheritance from `fieldset` elements in IE.
+
+legend {
+  color: inherit; // 2
+  display: table; // 1
+  max-width: 100%; // 1
+  white-space: normal; // 1
+}
+
+// 1. Add the correct display in Edge 18- and IE.
+// 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+
+progress {
+  display: inline-block; // 1
+  vertical-align: baseline; // 2
+}
+
+// Remove the inheritance of text transform in Firefox.
+
+select {
+  text-transform: none;
+}
+
+// 1. Remove the margin in Firefox and Safari.
+// 2. Remove the default vertical scrollbar in IE.
+// 3. Change the resize direction in all browsers (opinionated).
+
+textarea {
+  margin: 0; // 1
+  overflow: auto; // 2
+  resize: vertical; // 3
+}
+
+// Remove the padding in IE 10-.
+
+[type='checkbox'],
+[type='radio'] {
+  padding: 0;
+}
+
+// 1. Correct the odd appearance in Chrome, Edge, and Safari.
+// 2. Correct the outline style in Safari.
+
+[type='search'] {
+  -webkit-appearance: textfield; // 1
+  outline-offset: -2px; // 2
+}
+
+// Correct the cursor style of increment and decrement buttons in Safari.
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+// Correct the text style of placeholders in Chrome, Edge, and Safari.
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+// Remove the inner padding in Chrome, Edge, and Safari on macOS.
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+// 1. Correct the inability to style upload buttons in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; // 1
+  font: inherit; // 2
+}
+
+// Remove the inner border and padding of focus outlines in Firefox.
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+// Restore the focus outline styles unset by the previous rule in Firefox.
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+// Remove the additional :invalid styles in Firefox.
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+//
+// Extra rules
+// https://github.com/csstools/sanitize.css/blob/master/forms.css
+//
+
+// 1. Change the inconsistent appearance in all browsers (opinionated).
+// 2. Add typography inheritance in all browsers (opinionated).
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent; // 1
+  border: 1px solid WindowFrame; // 1
+  color: inherit; // 1
+  font: inherit; // 2
+  letter-spacing: inherit; // 2
+  padding: 0.25em 0.375em; // 1
+}
+
+// Change the inconsistent appearance in all browsers (opinionated).
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: no-repeat right center / 1em;
+  border-radius: 0;
+  padding-right: 1em;
+}
+
+// Change the inconsistent appearance in all browsers (opinionated).
+
+select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+}
+
+// Change the inconsistent appearance in IE (opinionated).
+
+::-ms-expand {
+  display: none;
+}
+
+// Correct the inconsistent appearance in IE (opinionated).
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.54);
+}

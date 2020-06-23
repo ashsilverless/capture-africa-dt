@@ -1,0 +1,53 @@
+%background-media__css-image--cover {
+  &[style*='background-image'] {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+%background-media {
+  @extend %background-media__css-image--cover;
+
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+
+  &::after {
+    background-image: linear-gradient(
+      180deg,
+      transparent 30%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  > iframe {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 150vw;
+    height: 106.25vw;
+    min-height: max(100%, 150vh);
+    min-width: max(1200%, 227.77vh);
+  }
+
+  > img,
+  > video {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+  }
+}

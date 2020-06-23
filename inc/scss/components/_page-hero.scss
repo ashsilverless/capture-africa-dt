@@ -1,0 +1,27 @@
+////
+/// Page Hero
+////
+
+@use '../utilities/media-query' as mediaQuery;
+
+@use './banner';
+
+$_namespace: 'page-hero';
+
+.component__#{$_namespace} {
+  margin-bottom: 60px;
+}
+
+.component__#{$_namespace}__hero {
+  @extend .component__banner__hero;
+}
+
+.component__#{$_namespace}__hero__container {
+  @extend .component__banner__hero__container;
+
+  min-height: max(400px, calc(50vh - 60px));
+}
+
+.component__#{$_namespace}__hero__background {
+  @extend .component__banner__hero__background;
+}

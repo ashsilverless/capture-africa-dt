@@ -1,0 +1,9 @@
+@use '../variables';
+
+body {
+  background-color: variables.$colour-brand-two;
+  color: variables.$colour-brand-five;
+}
+div:focus {
+    outline:none;
+}

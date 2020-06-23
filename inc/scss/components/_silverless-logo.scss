@@ -1,0 +1,54 @@
+////
+/// Silverless Logo
+////
+
+@use '../layout/typography';
+@use '../utilities' as utils;
+@use '../variables';
+
+/// Module Namespace
+/// @access private
+$_namespace: 'silverless-logo';
+
+.#{$_namespace} {
+  // margin-top: -10px;
+  text-align: center;
+
+  #logo {
+    height: 30px;
+    width: 80px;
+  }
+
+  #silverless {
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+
+    path {
+      fill: white;
+    }
+  }
+
+  #created {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s transform ease, 2s opacity ease;
+
+    path {
+      fill: white;
+    }
+  }
+
+  @include utils.element('container') {
+    &:focus,
+    &:hover {
+      #created,
+      #silverless {
+        opacity: 0.8;
+      }
+
+      #created {
+        transform: translateY(0);
+      }
+    }
+  }
+}

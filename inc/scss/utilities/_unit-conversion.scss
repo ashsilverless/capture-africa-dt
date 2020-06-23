@@ -1,0 +1,54 @@
+/// Convert Adobe XD tracking value
+/// @access public
+/// @param {Number} $fontsize - Element's fontsize
+/// @param {Number} $tracking - Tracking as defined in Adobe XD
+/// @returns {Number} - Letter spacing
+/// @example
+/// p {
+///   letter-spacing: convert-xd-tracking(18px, 150);
+///  // Outputs: 2.7px;
+/// }
+@function convert-xd-tracking($fontsize, $tracking) {
+  @return $fontsize * ($tracking / 1000);
+}
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: 16) {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) {
+    $value: 0;
+  } // Turn 0rem into 0
+  @return $value;
+}
+
+@function xd-line-height($font-size, $line-height) {
+  @return $line-height / strip-unit($font-size);
+}
+
+/// Convert unit to rem
+/// Allows easy to read/maintain values within Scss
+/// @param {string | number} $values - Value(s) to convert to rem
+/// @param {string | number} $base-value [$rem-base] - The base number to calculate rem
+/// @example
+/// font-size: rem-calc(18px);
+/// /* Outputs */
+/// font-size: 1.125rem;
+@function rem($values, $base-value: 16) {
+  $max: length($values);
+
+  @if $max == 1 {
+    @return convert-to-rem(nth($values, 1), $base-value);
+  }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append(
+      $remValues,
+      convert-to-rem(nth($values, $i), $base-value)
+    );
+  }
+  @return $remValues;
+}

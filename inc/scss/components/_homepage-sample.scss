@@ -1,0 +1,7 @@
+@use '../layout/typography';
+@use '../variables';
+.sample-content {
+    p strong {
+        color: variables.$colour-brand-four;
+    }
+}

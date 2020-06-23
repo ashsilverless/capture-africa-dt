@@ -1,0 +1,122 @@
+@use '../layout/typography';
+@use '../variables';
+
+@use '../components/button';
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+label {
+  @extend %type__scale--9;
+  margin-top: 40px;
+}
+
+input {
+    position: relative;
+  @extend %type__scale--13;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-color: variables.$colour-brand-four;
+  margin-top: 10px;
+    line-height: 2rem;
+    font-size: 1rem;
+    text-transform: none;
+    border-width: 2px;
+    border-radius: 3px;
+}
+
+textarea {
+  margin-top: 10px;
+  border-color: variables.$colour-brand-four;
+}
+
+.component__form__field {
+  margin-top: 20px;
+}
+
+input[type='submit'] {
+  @extend %type__scale--13;
+  background-color: variables.$colour-brand-four;
+  display: block;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+
+  &:focus,
+  &:hover {
+    background-color: variables.$colour-brand-four--dark;
+
+    .button-one__wrapper {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+  }
+}
+
+form.wpcf7-form {
+    .form-wrapper {
+        max-width: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 8rem);
+        grid-column-gap:5rem;
+        align-items: flex-end;
+        &__item {
+            position: relative;
+            grid-column: 1/2;
+            &.textarea {
+                grid-row: 1/2;
+                grid-column: 2/3;
+                textarea {
+                    @extend %type__scale--13;
+                    text-transform: none;
+                    height: 2rem;
+                    border: none;
+                    border-bottom-style: solid;
+                    border-bottom-width: 2px;
+                    border-color: #c37a6a;
+                    overflow: hidden;
+                }
+            }
+            span.label {
+                @extend %type__scale--13;
+                position: absolute;
+                bottom: 3rem;
+            }
+        }
+        .button-submit {
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+    }
+    .ajax-loader {
+        position: absolute;
+        bottom: -40px;
+    }
+    .follow {
+        @extend %type__scale--13;
+        i {
+            width: calc(2rem + 2px);
+            height: calc(2rem + 2px);
+            line-height: 2rem;
+            border: 1px solid white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1rem;
+            &:first-of-type {
+                margin-left:3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+////
+/// Button
+////
+
+@use '../layout/typography';
+@use '../utilities' as utils;
+@use '../utilities/media-query' as mediaQuery;
+@use '../variables';
+
+$_namespace: 'button';
+
+.button-one {
+  @extend %type__scale--13;
+
+  background-color: variables.$colour-brand-four;
+  display: block;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  @include mediaQuery.minWidth(540px) {
+    width: 285px;
+  }
+
+  @include utils.element('wrapper') {
+    text-align: center;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: variables.$colour-brand-four--dark;
+
+    .button-one__wrapper {
+        position: relative;
+    }
+  }
+}
+
+.button-two {
+  @extend %type__scale--11;
+  display: inline-flex;
+  align-items: center;
+  transition: all .3s ease;
+  @include utils.element('icon') {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    transition: all .3s ease;
+  }
+
+  &:focus,
+  &:hover {
+    color: white;
+
+    .button-two__wrapper {
+    }
+      .button-two__icon {
+          margin-left: 10px;
+          margin-right: 10px;
+      }
+  }
+  &.white {
+      color: white;
+  }
+}
+
+.button-three {
+  @extend %type__scale--11;
+
+  color: variables.$colour-brand-five;
+  display: inline-flex;
+  align-items: center;
+
+  @include utils.element('icon') {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    transition:all .3s ease;
+  }
+
+  &:focus,
+  &:hover {
+    .button-three__wrapper {
+    }
+    .button-three__icon {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+  }
+}
+
+.button-four {
+  @extend %type__scale--12;
+  position: relative;
+  transition: all .3s ease;
+  padding-bottom: 5px;
+  &:before {
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left:0;
+      transition: all .3s ease;
+      height: 1px;
+      width: 100%;
+      background:variables.$colour-brand-four;
+  }
+  &:after {
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left:0;
+      transition: all .3s ease;
+      height: 1px;
+      width: 0;
+      background:white;
+  }
+  &:focus,
+  &:hover {
+    color: white;
+    &:after {
+        width: 100%;
+    }
+  }
+  &.white {
+      color: white;
+  }
+}
+
+.button-five {
+  @extend %type__scale--12;
+
+  color: variables.$colour-brand-five;
+  padding-bottom: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+
+  &:focus,
+  &:hover {
+    color: variables.$colour-brand-five--dark;
+
+    border-bottom-color: transparent;
+  }
+}

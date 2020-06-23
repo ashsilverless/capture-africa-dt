@@ -1,0 +1,360 @@
+////
+/// Typography
+/// Typographic placeholders, utilities and HTML elements
+/// @group type
+////
+
+@use 'sass:map';
+
+@use '../utilities' as utils;
+@use '../variables';
+
+$namespace: 'type';
+
+//
+// Typography: Color
+//
+
+$type-colour: (
+  'black': #000000,
+  'white': #ffffff,
+  'pink': variables.$colour-brand-four,
+  'faded-blue': rgba(63, 62, 75, 0.57),
+  'current-color': currentColor,
+);
+
+%#{$namespace},
+.#{$namespace} {
+  @include utils.element('colour') {
+    @each $name, $colour in $type-colour {
+      @include utils.modifier($name) {
+        color: $colour;
+      }
+    }
+  }
+}
+
+//
+// Typography: Family
+//
+
+$type-family: (
+  'serif': (
+    'Cormorant Garamond',
+    serif,
+  ),
+  'sans-serif': (
+    'Open Sans',
+    sans-serif,
+  ),
+);
+
+%#{$namespace},
+.#{$namespace} {
+  @include utils.element('family') {
+    @each $name, $family in $type-family {
+      @include utils.modifier($name) {
+        font-family: $family;
+      }
+    }
+  }
+}
+
+//
+// Typography: Transform
+//
+
+$type-transform: (
+  'uppercase': uppercase,
+);
+
+%#{$namespace},
+.#{$namespace} {
+  @include utils.element('transform') {
+    @each $name, $transform in $type-transform {
+      @include utils.modifier($name) {
+        text-transform: $transform;
+      }
+    }
+  }
+}
+
+//
+// Typography: Weight
+//
+
+$type-weight: (
+  'light': 300,
+  'normal': 400,
+  'semi-bold': 500,
+  'bold': 600,
+);
+
+%#{$namespace},
+.#{$namespace} {
+  @include utils.element('weight') {
+    @each $name, $weight in $type-weight {
+      @include utils.modifier($name) {
+        font-weight: $weight;
+      }
+    }
+  }
+}
+
+//
+// Typography: Width
+//
+
+$max-width: 560px;
+
+%#{namespace} {
+  @include utils.element('max-width') {
+    max-width: utils.rem($max-width);
+  }
+}
+
+//
+// Typography: Scale
+//
+
+$type-scale: (
+  /// Heading 1
+    1:
+    (
+      colour: 'faded-blue',
+      family: 'serif',
+      font-size: 61px,
+      line-height: 101,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Heading 2
+    2:
+    (
+      colour: 'pink',
+      family: 'serif',
+      font-size: 45px,
+      line-height: 75,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Heading 3
+    3:
+    (
+      family: 'serif',
+      font-size: 36px,
+      line-height: 55,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Heading 4
+    4:
+    (
+      family: 'serif',
+      font-size: 34px,
+      line-height: 52,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Heading 5
+    5:
+    (
+      family: 'serif',
+      font-size: 18px,
+      line-height: 32,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Heading 6
+    6:
+    (
+      colour: 'pink',
+      family: 'serif',
+      font-size: 18px,
+      line-height: 32,
+      tracking: 100,
+      transform: 'uppercase',
+    ),
+  /// Heading 7
+    7:
+    (
+      family: 'sans-serif',
+      font-size: 14px,
+      line-height: 32,
+      tracking: 25,
+      transform: 'uppercase',
+    ),
+  /// Heading 8
+    8:
+    (
+      family: 'sans-serif',
+      font-size: 14px,
+      line-height: 32,
+      tracking: 25,
+      transform: 'uppercase',
+    ),
+  /// Body Sub
+    9:
+    (
+      colour: 'pink',
+      family: 'sans-serif',
+      font-size: 14px,
+      line-height: 34,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Body
+    10:
+    (
+      family: 'sans-serif',
+      font-size: 14px,
+      line-height: 30,
+      tracking: 5,
+    ),
+  /// CTA 1
+    11:
+    (
+      colour: 'pink',
+      family: 'sans-serif',
+      font-size: 12px,
+      line-height: 22,
+      tracking: 200,
+      transform: 'uppercase',
+    ),
+  /// CTA 2
+    12:
+    (
+      colour: 'pink',
+      family: 'sans-serif',
+      font-size: 12px,
+      line-height: 22,
+      tracking: 200,
+      transform: 'uppercase',
+    ),
+  /// Button
+    13:
+    (
+      family: 'sans-serif',
+      font-size: 12px,
+      line-height: 22,
+      tracking: 150,
+      transform: 'uppercase',
+    ),
+  /// Legal
+    14:
+    (
+      family: 'sans-serif',
+      font-size: 10px,
+      line-height: 14,
+    )
+);
+
+%#{$namespace},
+.#{$namespace} {
+  @include utils.element('scale') {
+    @each $name, $scale in $type-scale {
+      @include utils.modifier($name) {
+        @if map-has-key($scale, 'colour') {
+          $colour: map-get($scale, 'colour');
+
+          @extend %#{$namespace}__colour--#{$colour};
+        } @else {
+          @extend %#{$namespace}__colour--current-color;
+        }
+
+        @if map-has-key($scale, 'family') {
+          $family: map-get($scale, 'family');
+
+          @extend %#{$namespace}__family--#{$family};
+        }
+
+        @if map-has-key($scale, 'font-size') {
+          $font-size: map-get($scale, 'font-size');
+          $rem-font-size: utils.rem($font-size);
+
+          font-size: $rem-font-size;
+
+          @if map-has-key($scale, 'tracking') {
+            $tracking: map-get($scale, 'tracking');
+
+            letter-spacing: utils.convert-xd-tracking(
+              $rem-font-size,
+              $tracking
+            );
+          }
+
+          @if map-has-key($scale, 'line-height') {
+            $xd-line-height: map-get($scale, 'line-height');
+
+            line-height: utils.xd-line-height($font-size, $xd-line-height);
+          }
+        }
+
+        @extend %#{namespace}__max-width;
+
+        @if map-has-key($scale, 'transform') {
+          $transform: map-get($scale, 'transform');
+
+          @extend %#{$namespace}__transform--#{$transform};
+        }
+      }
+    }
+  }
+}
+
+//
+// Typography utils.Elements
+//
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  @extend %#{$namespace}__scale--1;
+}
+
+h2 {
+  @extend %#{$namespace}__scale--2;
+}
+
+h3 {
+  @extend %#{$namespace}__scale--3;
+}
+
+h4 {
+  @extend %#{$namespace}__scale--4;
+}
+
+h5 {
+  @extend %#{$namespace}__scale--5;
+}
+
+h6 {
+  @extend %#{$namespace}__scale--6;
+}
+
+p {
+  @extend %#{$namespace}__scale--10;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding-inline-start: 1rem;
+  margin-top: 0;
+}
+li {
+      @extend %#{$namespace}__scale--10;
+      margin-bottom: 10px;
+}
+li {
+  p:first-of-type {
+    margin-top: 0;
+  }
+}

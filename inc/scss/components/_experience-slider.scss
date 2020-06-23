@@ -1,0 +1,127 @@
+////
+/// Experience Slider
+////
+
+@use '../layout/background-media';
+@use '../layout/typography';
+@use '../utilities/media-query' as mediaQuery;
+@use '../utilities' as utils;
+@use '../variables';
+
+/// Module Namespace
+/// @access private
+$_namespace: 'component__experience-slider';
+
+.#{$_namespace} {
+  margin-top: 60px;
+  background-color: variables.$colour-brand-three;
+
+  .tns-outer {
+    display: grid;
+  }
+
+  @include utils.element('container') {
+    grid-template-rows: repeat(3, auto);
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include utils.element('title') {
+    @extend %type__scale--4;
+
+    margin-bottom: 0;
+  }
+
+  .component__experience-slider__controls--prev,
+  .component__experience-slider__controls--next {
+    width: 30px;
+    height: 30px;
+    color: variables.$colour-brand-four;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    position: absolute;
+    top: 0;
+    transform: translateY(calc(-100% - 30px));
+    transition: all .3s ease;
+    @include mediaQuery.minWidth(500px) {
+      position: initial;
+      transform: none;
+    }
+    &:hover {
+      color: white;
+    }
+  }
+
+  .component__experience-slider__controls--prev {
+    margin-right: 20px;
+
+    left: 0;
+  }
+
+  .component__experience-slider__controls--next {
+    margin-left: 20px;
+    right: 0;
+  }
+
+  @include utils.element('wrapper') {
+    grid-row-start: 2;
+    margin-top: 90px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mediaQuery.minWidth(500px) {
+      margin-top: 60px;
+      justify-content: space-between;
+    }
+  }
+
+  @include utils.element('list') {
+    display: flex;
+    -webkit-padding-start: 0;
+  }
+
+  @include utils.element('cta-container') {
+    grid-row-start: 3;
+    margin-top: 80px;
+    justify-content: space-between;
+    padding-right: 60px;
+    display: flex;
+
+    flex-direction: column;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    a + a {
+      margin-top: 40px;
+
+      @include mediaQuery.minWidth(800px) {
+        margin-top: 0;
+      }
+    }
+
+    @include mediaQuery.minWidth(800px) {
+      flex-direction: row;
+    }
+  }
+}
+.carousel-wrapper {
+    .component__experience-slider__controls--next,
+    .component__experience-slider__controls--prev {
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        left:10px;
+        margin-top:-15px;
+    }
+    .component__experience-slider__controls--next {
+        left:unset;
+        right:10px;
+    }
+}

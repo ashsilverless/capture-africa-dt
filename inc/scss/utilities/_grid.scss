@@ -1,0 +1,207 @@
+////
+/// Grid
+/// @group grid
+////
+
+@use './bem';
+@use './media-query' as mediaQuery;
+
+$_namespace: 'page__grid';
+$_grid-location-namespace: 'grid__location';
+$_container-max-width: 1400px;
+
+main > .#{$_namespace} {
+  &:last-of-type {
+    margin-bottom: 60px;
+  }
+}
+
+.#{$_namespace} {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns:
+    [left-pad] 0fr
+    [left-wide-content] 1fr
+    [sidebar] 16fr
+    [content-line] 16fr
+    [right-wide-content] 1fr
+    [right-pad] 0fr;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $_container-max-width;
+
+  @include mediaQuery.minWidth(540px) {
+    grid-column-gap: 15px;
+    grid-template-columns:
+      [left-pad] 1fr
+      [left-wide-content] 2fr
+      [sidebar] 24fr
+      [content-line] 40fr
+      [right-wide-content] 2fr
+      [right-pad] 1fr;
+  }
+
+  @include mediaQuery.minWidth(800px) {
+    grid-template-columns:
+      [left-pad] 1fr
+      [left-wide-content] 2fr
+      [sidebar] 16fr
+      [content-line] 32fr
+      [right-wide-content] 2fr
+      [right-pad] 1fr;
+  }
+
+  @include mediaQuery.minWidth(1000px) {
+    grid-column-gap: 20px;
+    grid-template-columns:
+      [left-pad] 1fr
+      [left-wide-content] 2fr
+      [sidebar] 8fr
+      [content-line] 16fr
+      [right-wide-content] 2fr
+      [right-pad] 1fr;
+  }
+
+  .#{$_namespace} {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns:
+      [sidebar] 1fr
+      [content-line] 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $_container-max-width;
+
+    @include mediaQuery.minWidth(540px) {
+      grid-column-gap: 15px;
+      grid-template-columns:
+        [left-pad] 0fr
+        [sidebar] 25fr
+        [content-line] 41fr
+        [right-pad] 0fr;
+    }
+
+    @include mediaQuery.minWidth(800px) {
+      grid-template-columns:
+        [left-pad] 0fr
+        [sidebar] 20fr
+        [content-line] 40fr
+        [right-pad] 0fr;
+    }
+
+    @include mediaQuery.minWidth(1000px) {
+      grid-column-gap: 20px;
+      grid-template-columns:
+        [left-pad] 1fr
+        [sidebar] 7fr
+        [content-line] 15fr
+        [right-pad] 1fr;
+    }
+  }
+
+  .#{$_grid-location-namespace}--extra-wide-content .#{$_namespace} {
+    @include mediaQuery.minWidth(540px) {
+      grid-template-columns:
+        [left-pad] 2fr
+        [sidebar] 24fr
+        [content-line] 38fr
+        [right-pad] 2fr;
+    }
+
+    @include mediaQuery.minWidth(800px) {
+      grid-template-columns:
+        [left-pad] 2fr
+        [sidebar] 16fr
+        [content-line] 31fr
+        [right-pad] 2fr;
+    }
+
+    @include mediaQuery.minWidth(1000px) {
+      grid-template-columns:
+        [left-pad] 3fr
+        [sidebar] 12fr
+        [content-line] 23fr
+        [right-pad] 3fr;
+    }
+  }
+
+  .#{$_grid-location-namespace}--max-wide-content .#{$_namespace} {
+    @include mediaQuery.minWidth(540px) {
+      grid-template-columns:
+        [left-pad] 2fr
+        [sidebar] 27fr
+        [content-line] 43fr
+        [right-pad] 2fr;
+    }
+
+    @include mediaQuery.minWidth(800px) {
+      grid-template-columns:
+        [left-pad] 3fr
+        [sidebar] 12fr
+        [content-line] 24fr
+        [right-pad] 3fr;
+    }
+
+    @include mediaQuery.minWidth(1000px) {
+      grid-template-columns:
+        [left-pad] 3fr
+        [sidebar] 9fr
+        [content-line] 17fr
+        [right-pad] 3fr;
+    }
+  }
+}
+
+.#{$_grid-location-namespace}--content {
+  grid-column-end: right-wide-content;
+  grid-column-start: sidebar;
+
+  @include mediaQuery.minWidth(560px) {
+    grid-column-end: auto;
+    grid-column-start: content-line;
+  }
+
+  > :first-child {
+    margin-top: 20px;
+  }
+}
+
+.#{$_grid-location-namespace}--sidebar {
+  grid-column-end: right-wide-content;
+  grid-column-start: sidebar;
+
+  @include mediaQuery.minWidth(560px) {
+    grid-column-end: content-line;
+  }
+
+  > :first-child {
+    margin-top: 20px;
+  }
+}
+
+.#{$_grid-location-namespace}--wide-content {
+  grid-column-end: right-wide-content;
+  grid-column-start: sidebar;
+
+  .page__nested-grid & {
+    grid-column-end: right-pad;
+  }
+}
+
+.#{$_grid-location-namespace}--extra-wide-content {
+  grid-column-end: right-pad;
+  grid-column-start: left-wide-content;
+}
+
+.#{$_grid-location-namespace}--max-wide-content {
+  grid-column-end: right;
+  grid-column-start: left-pad;
+}
+.destination .gallery {
+    grid-column-start: sidebar;
+}
+
+.gallery-page .gallery {
+    grid-column:3/5;
+    margin-bottom: 5rem;
+}

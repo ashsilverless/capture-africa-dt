@@ -1,0 +1,28 @@
+@use '../utilities' as utils;
+@use '../variables';
+@use '../layout/typography';
+.toggle {
+    &__question {
+        @extend %type__scale--6;
+        border-top:1px solid variables.$color-brand-pink;
+        border-bottom:1px solid variables.$color-brand-pink;
+        max-width: 20rem;
+        padding:1rem 0;
+        color: white;
+        svg {
+            margin-right:1rem;
+            transition:1s transform;
+            path {
+                fill:variables.$color-brand-pink;
+            }
+        }
+    }
+    &__answer {
+        display: none;
+    }
+    &.active {
+        svg {
+            transform:rotate(90deg);
+        }
+    }
+}

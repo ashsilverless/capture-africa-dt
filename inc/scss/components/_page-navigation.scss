@@ -1,0 +1,38 @@
+////
+/// Hero
+////
+
+@use '../layout/background-media';
+@use '../layout/typography';
+@use '../utilities' as utils;
+@use '../variables';
+
+.page-navigation {
+}
+
+.page-navigation__list-item {
+  a {
+    @extend %type__scale--9;
+
+    &:focus,
+    &:hover {
+      color: variables.$colour-brand-four--dark;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+  }
+
+  + .page-navigation__list-item {
+    margin-top: 40px;
+  }
+}
+
+.page-navigation__list-item--current {
+  a {
+    color: variables.$colour-brand-one;
+  }
+}
+
+#page-navigation-label {
+  display: none;
+}

@@ -1,0 +1,17 @@
+@mixin media($query, $value) {
+  @media ($query: $value) {
+    @content;
+  }
+}
+
+@mixin minWidth($value) {
+  @include media('min-width', $value) {
+    @content;
+  }
+}
+
+@mixin maxWidth($value) {
+  @include media('max-width', $value) {
+    @content;
+  }
+}

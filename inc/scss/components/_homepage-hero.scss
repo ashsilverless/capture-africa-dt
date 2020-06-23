@@ -1,0 +1,48 @@
+////
+/// Homepage Hero
+////
+
+@use '../layout/typography';
+
+@use './banner';
+
+$_namespace: 'homepage-hero';
+
+.component__#{$_namespace} {
+  margin-bottom: 60px;
+}
+
+.component__#{$_namespace}__hero {
+  @extend .component__banner__hero;
+}
+
+.component__#{$_namespace}__hero__container {
+  @extend .component__banner__hero__container;
+  height:100vh;
+}
+
+.component__#{$_namespace}__hero__background {
+  @extend .component__banner__hero__background;
+}
+
+.component__#{$_namespace}__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: max(700px, calc(100vh - 60px));
+  padding-bottom: 0;
+  padding-top: 60px;
+  z-index: 1;
+
+  a {
+    margin-top: 20px;
+  }
+}
+
+.component__#{$_namespace}__content__title {
+  @extend %type__scale--3;
+}
+
+.component__#{$_namespace}__content__description {
+  @extend %type__scale--8;
+}

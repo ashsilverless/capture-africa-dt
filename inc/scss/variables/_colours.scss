@@ -1,0 +1,12 @@
+@use 'sass:color';
+
+// Base Brand Colours
+
+$colour-brand-one: #000000;
+$colour-brand-two: #292b33;
+$colour-brand-three: #353742;
+$colour-brand-four: #c37a6a;
+$colour-brand-four--dark: color.scale($colour-brand-four, $lightness: -30%);
+$colour-brand-five: #ffffff;
+$colour-brand-five--dark: color.scale($colour-brand-five, $lightness: -30%);
+$color-brand-pink: #C37A6A;

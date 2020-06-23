@@ -1,0 +1,25 @@
+////
+/// Bem
+////
+
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+  @at-root {
+    &__#{$element} {
+      @content;
+    }
+  }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+  @at-root {
+    &--#{$modifier} {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,195 @@
+////
+/// App Bar
+////
+
+@use '../layout/background-media';
+@use '../layout/typography';
+@use '../utilities' as utils;
+@use '../variables';
+
+$_namespace: 'app-bar';
+$_namespace-menu: 'menu';
+
+.component__#{$_namespace} {
+  background-image: linear-gradient(
+    1deg,
+    transparent 30%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.component__#{$_namespace}__container {
+  position: relative;
+  align-items: center;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.component__#{$_namespace}__wrapper {
+  grid-column-end: right-pad;
+
+  padding-top: 10px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.component__#{$_namespace}__menu-icon-container {
+}
+
+.component__#{$_namespace}__logo-container {
+}
+
+.component__#{$_namespace}__menu-open-icon {
+  [data-app-menu-is-open='true'] & {
+    display: none;
+  }
+}
+
+.component__#{$_namespace}__menu-close-icon {
+  display: none;
+
+  [data-app-menu-is-open='true'] & {
+    display: block;
+  }
+}
+
+.component__#{$_namespace-menu} {
+  background-color: variables.$colour-brand-two;
+  display: block;
+  height: 100vh;
+  max-height: 100vh;
+  overflow:hidden;
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  transition: all .3s ease;
+
+  [data-app-menu-is-open='true'] & {
+    top:0;
+  }
+}
+
+.component__#{$_namespace-menu}__container {
+  grid-template-rows: repeat(3, auto);
+
+  padding-top: 100px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+}
+
+.component__#{$_namespace-menu}__content {
+  grid-column-end: right-pad;
+  display: grid;
+  grid-template-rows: minmax(0,auto) minmax(0,auto) minmax(0,6rem);
+  height: calc(100vh - 150px);
+  .menu-main-container {
+  grid-row:2/3;
+  grid-row-gap: 30px;
+  }
+}
+
+.component__#{$_namespace-menu}__title {
+  @extend %type__scale--1;
+  grid-row:1/2;
+  margin: 0;
+  line-height: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.component__#{$_namespace-menu}__list {
+  padding-inline-start: 0;
+  grid-row-start: 2;
+  list-style: none;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.component__#{$_namespace-menu}__list-item {
+  @extend %type__scale--7;
+
+  &:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  a {
+      position: relative;
+      padding: .5rem 0;
+      &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -10px;
+          transition: width .3s ease;
+          height: 100%;
+          width: 0;
+          background: variables.$colour-brand-three;
+          z-index: -1;
+      }
+    &:focus,
+    &:hover {
+      &:before {
+          width:calc(100% + 20px);
+      }
+    }
+  }
+}
+
+.component__#{$_namespace-menu}__social-container {
+  grid-row-start: 3;
+  grid-column-end: right-pad;
+  grid-column-start: 1;
+    margin-top: 3rem;
+  > p {
+    @extend %type__scale--13;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.component__#{$_namespace-menu}__social-list {
+  margin-top: 10px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.component__#{$_namespace-menu}__social-item {
+  + .component__#{$_namespace-menu}__social-item {
+    margin-left: 10px;
+  }
+
+  a {
+    &:focus,
+    &:hover {
+      color: variables.$colour-brand-five--dark;
+    }
+  }
+}
+.component__app-bar__logo-container svg {
+    transition:all 0.5s ease;
+}
+.scrolled {
+    .component__app-bar__wrapper {
+        padding-bottom: 20px;
+    }
+    .component__app-bar {
+        height: auto;
+        background:variables.$colour-brand-two;
+    }
+    .component__app-bar__logo-container svg {
+        transform:all 0.5s ease;
+        height:3rem;
+    }
+}

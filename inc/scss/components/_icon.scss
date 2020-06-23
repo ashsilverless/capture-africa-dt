@@ -1,0 +1,19 @@
+////
+/// Icon
+////
+
+@use '../layout/typography';
+@use '../utilities' as utils;
+@use '../variables';
+
+$_namespace: 'icon';
+
+.#{$_namespace} {
+  @include utils.modifier('rotate-90') {
+    transform: rotate(90deg);
+  }
+
+  @include utils.modifier('rotate-180') {
+    transform: rotate(180deg);
+  }
+}
