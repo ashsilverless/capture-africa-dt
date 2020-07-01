@@ -41,7 +41,7 @@ get_header();?>
                 <div class="page__grid">
                   <div class="component__banner__content grid__location--content">
                     <h2 class="component__banner__content__title"><?php the_sub_field('title');?></h2>
-                    <a class="button-three" href="#" data-expandable-cta="true"
+                    <a class="button-three expanding" href="#" data-expandable-cta="true"
                       ><span class="button-three__icon"
                         ><svg
                           class=""
@@ -111,7 +111,7 @@ get_header();?>
     <?php endwhile;?>
 <?php endif;?>
 </div>
-
+<!--
 <div class="component__banner">
   <div class="component__banner__hero">
     <div class="component__banner__hero__container">
@@ -126,5 +126,7 @@ get_header();?>
     </div>
   </div>
 </div>
+-->
+
 <?php get_template_part('template-parts/call-to-action');?>
 <?php get_footer();?>

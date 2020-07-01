@@ -109,6 +109,7 @@ get_header();?>
 </div>
 <?php endwhile;?>
 <?php endif;?>
+<!--
 <div class="component__banner">
   <div class="component__banner__hero">
     <div class="component__banner__hero__container">
@@ -123,6 +124,6 @@ get_header();?>
     </div>
   </div>
 </div>
-
+-->
 <?php get_template_part('template-parts/call-to-action');?>
 <?php get_footer();?>

@@ -43,7 +43,7 @@ get_header();?>
                   <div class="component__banner__content grid__location--content">
                     <p class="component__banner__content__sub-title">special <?php echo $i;?></p>
                     <h2 class="component__banner__content__title"><?php the_sub_field('title');?></h2>
-                    <a class="button-three" href="#" data-expandable-cta="true"
+                    <a class="button-three expanding" href="#" data-expandable-cta="true"
                       ><span class="button-three__icon"
                         ><svg
                           class=""

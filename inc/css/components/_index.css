@@ -140,6 +140,10 @@ main > .page__grid:last-of-type {
 .grid__location--content > :first-child, .component__footer__contact-row__content > :first-child {
   margin-top: 20px;
 }
+.grid__location--content p a, .component__footer__contact-row__content p a {
+  font-weight: 900;
+  color: #c37a6a;
+}
 
 .grid__location--sidebar {
   grid-column-end: right-wide-content;
@@ -419,7 +423,7 @@ li p:first-of-type {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .component__app-bar__container {
@@ -474,7 +478,7 @@ li p:first-of-type {
 .component__menu__content {
   grid-column-end: right-pad;
   display: grid;
-  grid-template-rows: minmax(0, auto) minmax(0, auto) minmax(0, 6rem);
+  grid-template-rows: minmax(0, auto) minmax(0, auto) minmax(0, 10rem);
   height: calc(100vh - 150px);
 }
 .component__menu__content .menu-main-container {
@@ -499,10 +503,11 @@ li p:first-of-type {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 0;
 }
 
 .component__menu__list-item:not(:first-of-type) {
-  margin-top: 20px;
+  margin-top: 0;
 }
 .component__menu__list-item a {
   position: relative;
@@ -527,11 +532,14 @@ li p:first-of-type {
   grid-row-start: 3;
   grid-column-end: right-pad;
   grid-column-start: 1;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 .component__menu__social-container > p {
   margin-bottom: 0;
   margin-top: 0;
+}
+.component__menu__social-container i {
+  font-size: 1.5rem;
 }
 
 .component__menu__social-list {
@@ -787,6 +795,10 @@ li p:first-of-type {
   opacity: 0;
 }
 .read-more-trigger:hover .button-two__icon {
+  transform: rotate(90deg);
+}
+
+.button-three.expanding.active .button-three__icon {
   transform: rotate(90deg);
 }
 

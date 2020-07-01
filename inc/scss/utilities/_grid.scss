@@ -5,6 +5,7 @@
 
 @use './bem';
 @use './media-query' as mediaQuery;
+@use '../variables';
 
 $_namespace: 'page__grid';
 $_grid-location-namespace: 'grid__location';
@@ -163,6 +164,10 @@ main > .#{$_namespace} {
 
   > :first-child {
     margin-top: 20px;
+  }
+  p a {
+      font-weight: 900;
+      color: variables.$colour-brand-four;
   }
 }
 

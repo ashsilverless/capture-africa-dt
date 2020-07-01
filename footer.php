@@ -14,23 +14,23 @@
 	  class="grid__location--content component__footer__contact-row__content"
 	>
 	  <p class="component__footer__contact-name">
-		Capture Africa - Luxury Mobile Safaris Botswana
+		<?php the_field('text_field', 'options');?>
 	  </p>
 	  <ul class="component__footer__contact-list">
 		<li>
 		  <p class="component__footer__contact-list__item">
-			Private Bag Bo 28, Maun, Botswana
+			<?php the_field('address', 'options');?>
 		  </p>
 		</li>
 		<li>
 		  <p class="component__footer__contact-list__item">
-			T: <a href="tel:+267 686 1200">+267 686 1200</a>
+			T: <a href="tel:<?php the_field('telephone', 'options');?>"><?php the_field('telephone', 'options');?></a>
 		  </p>
 		</li>
 		<li>
 		  <p class="component__footer__contact-list__item">
 			E:
-			<a href="mailto:info@captureAfrica.net">info@captureafrica.net</a>
+			<a href="mailto:<?php the_field('email', 'options');?>"><?php the_field('email', 'options');?></a>
 		  </p>
 		</li>
 	  </ul>

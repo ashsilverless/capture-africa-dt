@@ -230,24 +230,29 @@ $(document).ready(function () {
     console.groupEnd();*/
   }
 
+var numItems = $('.experience-block').length;
+console.log(numItems);
+
+var i = 1;
+for (i = 1; i < (numItems + 1); i++) {
+
   try {
     const experienceSlider = tns({
       autoplay: false,
-      container: '.component__experience-slider__list',
+      container: '.component__experience-slider__list' + [i],
       gutter: 0,
       items: 1,
     mouseDrag: true,
       mode: 'carousel',
       nav: false,
-      nextButton: '.component__experience-slider__controls--next',
-      prevButton: '.component__experience-slider__controls--prev',
+      nextButton: '.exp-next'+ [i],
+      prevButton: '.exp-prev'+ [i],
       responsive: {
         800: {
-          items: 2,
-          gutter: 20,
+          items: 1,
         },
         1100: {
-          items: 3,
+          items: 1,
         },
       },
     });
@@ -256,32 +261,8 @@ $(document).ready(function () {
     console.error(error);
     console.groupEnd();*/
   }
+}
 
-  try {
-    const experienceSlider = tns({
-      autoplay: false,
-      container: '.experience-carousel',
-      gutter: 0,
-      items: 1,
-      mouseDrag: true,
-      mode: 'carousel',
-      nav: false,
-      nextButton: '.component__experience-slider__controls--next',
-      prevButton: '.component__experience-slider__controls--prev',
-      responsive: {
-        800: {
-          items: 1,
-        },
-        1100: {
-          items: 1,
-        },
-      },
-    });
-  } catch (error) {
-    /*console.group('Experience Slider');
-    console.error(error);
-    console.groupEnd();*/
-  }
 
 });
 
@@ -331,6 +312,10 @@ $('.toggle').click(function(event) {
 $('.read-more-trigger').click(function(event) {
     $('.read-more-wrapper').addClass('expand');
     $(this).addClass('hide');
+});
+
+$('.button-three.expanding').click(function(event) {
+    $(this).toggleClass('active');
 });
 
 }); //Don't remove ---- end of jQuery wrapper

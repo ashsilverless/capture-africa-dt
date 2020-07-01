@@ -76,7 +76,7 @@
 		            </text>
 		          </svg>
 		        </div></a
-		      ><a class="component__app-bar__logo-container" href="#"
+		      ><a class="component__app-bar__logo-container" href="<?php echo get_site_url(); ?>"
 		        >
 				<?php get_template_part('inc/img/capture-africa-logo');?>
 			</a>
@@ -105,55 +105,11 @@
 		        <div class="component__menu__social-container">
 		          <p>Connect With Us</p>
 		          <ul class="component__menu__social-list">
-		            <li class="component__menu__social-item">
-		              <a href="#"
-		                ><svg
-		                  class=""
-		                  xmlns="http://www.w3.org/2000/svg"
-		                  width="30"
-		                  height="31"
-		                >
-		                  <defs></defs>
-		                  <g stroke="currentColor" stroke-width="1.7" fill="none">
-		                    <ellipse
-		                      cx="15"
-		                      cy="15.5"
-		                      rx="15"
-		                      ry="15.5"
-		                      stroke="none"
-		                    ></ellipse>
-		                    <ellipse cx="15" cy="15.5" rx="14.15" ry="14.65"></ellipse>
-		                  </g>
-		                  <path
-		                    class="b"
-		                    d="M18.432 7.352h-6.948a4.284 4.284 0 00-4.278 4.279v6.947a4.283 4.283 0 004.279 4.279h6.948a4.284 4.284 0 004.279-4.279v-6.947a4.284 4.284 0 00-4.28-4.279zm2.9 11.226a2.906 2.906 0 01-2.9 2.9h-6.948a2.906 2.906 0 01-2.9-2.9v-6.947a2.906 2.906 0 012.9-2.9h6.948a2.906 2.906 0 012.9 2.9zm0 0"
-		                    fill="currentColor"
-		                  ></path>
-		                  <path
-		                    class="b"
-		                    d="M14.958 11.11a4 4 0 104 3.995 4 4 0 00-4-3.995zm0 6.614a2.619 2.619 0 112.62-2.619 2.622 2.622 0 01-2.62 2.619zm0 0M19.122 9.941a1.008 1.008 0 10.713.3 1.012 1.012 0 00-.713-.3zm0 0"
-		                    fill="currentColor"
-		                  ></path></svg
-		              ></a>
-		            </li>
-		            <li class="component__menu__social-item">
-		              <a href="#"
-		                ><svg
-		                  class=""
-		                  xmlns="http://www.w3.org/2000/svg"
-		                  width="30"
-		                  height="30"
-		                >
-		                  <g stroke="currentColor" stroke-width="1.7" fill="none">
-		                    <circle cx="15" cy="15" r="15" stroke="none"></circle>
-		                    <circle cx="15" cy="15" r="14.15"></circle>
-		                  </g>
-		                  <path
-		                    d="M18.246 14.618h-2.122v7.754h-2.9v-7.754h-1.94v-2.665l1.94-.008-.008-1.569c0-2.177.591-3.509 3.164-3.509h2.138V9.54h-1.343c-.993 0-1.048.378-1.048 1.072v1.333h2.4z"
-		                    fill="currentColor"
-		                  ></path></svg
-		              ></a>
-		            </li>
+					  	<?php if( have_rows('social_links', 'option') ): while( have_rows('social_links', 'option') ): the_row(); ?>
+						<li class="component__menu__social-item">
+						  	<a href="<?php the_sub_field('page_link'); ?>"><i class="fab fa-<?php the_sub_field('name'); ?>"></i></a>
+						</li>
+					  	<?php endwhile; endif; ?>
 		          </ul>
 		        </div>
 		      </div>

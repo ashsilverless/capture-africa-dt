@@ -15,10 +15,11 @@ get_header();?>
   data-expandable-one-at-a-time="true"
   class="component__expandable__container--style-1"
 >
-<?php if( have_rows('experiences') ): ?>
+<?php if( have_rows('experiences') ):
+    $i = 1;?>
     <?php while( have_rows('experiences') ): the_row(); ?>
         <div
-          class="component__expandable__item--style-1"
+          class="component__expandable__item--style-1 experience-block"
           data-expandable-item="true"
           data-expandable-is-expanded="false"
         >
@@ -27,7 +28,7 @@ get_header();?>
               <div
                 class="component__banner__hero__container grid__location--wide-content carousel-wrapper"
               >
-              <div class="component__experience-slider__controls--prev">
+              <div class="component__experience-slider__controls--prev exp-prev<?=$i;?>">
                 <svg class="" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                   <path
                     d="M0 15a15 15 0 1115 15A15.072 15.072 0 010 15zm6.82.624l6 5.987a.859.859 0 00.592.241.766.766 0 00.785-.785.827.827 0 00-.273-.592l-2.833-2.834-2.05-1.92 2.818.1h10.775a.777.777 0 00.832-.817.8.8 0 00-.832-.849H11.862l-2.833.1 2.065-1.922L13.927 9.5a.826.826 0 00.273-.592.766.766 0 00-.785-.785.794.794 0 00-.592.24l-6 6a.862.862 0 00-.288.624.879.879 0 00.285.637z"
@@ -35,7 +36,7 @@ get_header();?>
                   ></path>
                 </svg>
               </div>
-              <div class="component__experience-slider__controls--next">
+              <div class="component__experience-slider__controls--next exp-next<?=$i;?>">
                 <svg
                   class="icon--rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +50,7 @@ get_header();?>
                 </svg>
               </div>
                 <div class="component__banner__hero__background">
-                    <div class="experience-carousel">
+                    <div class="component__experience-slider__list<?=$i;?>">
                     <?php
         			$images = get_sub_field('carousel');
         			if( $images ):
@@ -63,7 +64,7 @@ get_header();?>
                 <div class="page__grid">
                   <div class="component__banner__content grid__location--content">
                     <h2 class="component__banner__content__title"><?php the_sub_field('title');?></h2>
-                    <a class="button-three" href="#" data-expandable-cta="true"
+                    <a class="button-three expanding" href="#" data-expandable-cta="true"
                       ><span class="button-three__icon"
                         ><svg
                           class=""
@@ -98,7 +99,7 @@ get_header();?>
             </div>
           </div>
         </div>
-
+        <?php $i++;?>
     <?php endwhile;?>
 <?php endif;?>
 </div>

@@ -164,7 +164,7 @@ $heroVideo = get_sub_field('background_video');?>
               <h2 class="component__banner__content__title">
                 <?php the_sub_field('title_sample');?>
               </h2>
-              <a class="button-three" href="#" data-expandable-cta="true"
+              <a class="button-three expanding" href="#" data-expandable-cta="true"
                 ><span class="button-three__icon"
                   ><svg
                     class=""
