@@ -1154,6 +1154,31 @@ li p:first-of-type {
   min-height: max(400px, calc(50vh - 60px));
 }
 
+.home-slider {
+  height: 100vh;
+}
+.home-slider .tns-outer button {
+  display: none;
+}
+.home-slider .image-item {
+  height: 100vh;
+  background-size: cover !important;
+}
+
+.hero-wrapper {
+  position: relative;
+}
+.hero-wrapper__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.hero-wrapper .component__banner {
+  margin-bottom: 5rem;
+}
+
 .page-navigation__list-item a:focus, .page-navigation__list-item a:hover {
   color: #964d3c;
   border-bottom-style: solid;

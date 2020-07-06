@@ -25,3 +25,29 @@ $_namespace: 'page-hero';
 .component__#{$_namespace}__hero__background {
   @extend .component__banner__hero__background;
 }
+
+.home-slider {
+    height: 100vh;
+    .tns-outer {
+        button {
+            display: none;
+        }
+    }
+    .image-item {
+        height: 100vh;
+        background-size: cover !important;
+    }
+}
+.hero-wrapper {
+    position: relative;
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    .component__banner {
+        margin-bottom: 5rem;
+    }
+}

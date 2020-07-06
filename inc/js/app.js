@@ -216,6 +216,23 @@ $(document).ready(function () {
 
   try {
     const experienceSlider = tns({
+      container: '.home-hero-slider',
+      items: 1,
+      autoplay: false,
+      nav: false,
+      prevButton: '.component__quote-slider__controls--prev',
+      nextButton: '.component__quote-slider__controls--next',
+      // gutter: 20,
+    });
+  } catch (error) {
+    /*console.group('Quote Slider');
+    console.error(error);
+    console.groupEnd();*/
+  }
+
+
+  try {
+    const experienceSlider = tns({
       container: '.component__quote-slider__container',
       items: 1,
       autoplay: false,
@@ -231,8 +248,6 @@ $(document).ready(function () {
   }
 
 var numItems = $('.experience-block').length;
-console.log(numItems);
-
 var i = 1;
 for (i = 1; i < (numItems + 1); i++) {
 
@@ -261,6 +276,39 @@ for (i = 1; i < (numItems + 1); i++) {
     console.error(error);
     console.groupEnd();*/
   }
+
+  try {
+    const experienceSlider = tns({
+      autoplay: true,
+      container: '.home-slider__list' + [i],
+      gutter: 0,
+      items: 1,
+      mouseDrag: true,
+      mode: 'gallery',
+      speed: 3000,
+      nav: false,
+      nextButton: '.exp-next'+ [i],
+      prevButton: '.exp-prev'+ [i],
+      responsive: {
+        800: {
+          items: 1,
+        },
+        1100: {
+          items: 1,
+        },
+      },
+    });
+  } catch (error) {
+    /*console.group('Experience Slider');
+    console.error(error);
+    console.groupEnd();*/
+  }
+
+
+
+
+
+
 }
 
 
