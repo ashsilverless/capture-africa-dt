@@ -97,9 +97,11 @@
     }
 }
 .button-three.expanding {
+    &:hover,
     &.active {
         .button-three__icon {
             transform:rotate(90deg);
         }
     }
+
 }

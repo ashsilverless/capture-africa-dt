@@ -222,20 +222,5 @@ $heroVideo = get_sub_field('background_video');?>
 <?php endwhile; ?>
 <?php endif; ?>
 
-<div class="component__banner">
-  <div class="component__banner__hero">
-    <div class="component__banner__hero__container">
-      <div class="page__grid">
-        <div class="component__banner__content grid__location--content">
-          <h2 class="component__banner__content__title">Contact Us</h2>
-          <a class="button-one" href="#"
-            ><span class="button-one__wrapper">Example Button</span></a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <?php get_template_part('template-parts/call-to-action');?>
 <?php get_footer();?>

@@ -45,19 +45,17 @@ $_namespace: 'footer';
   margin-bottom: 0;
   padding-inline-start: 0;
   flex-direction: column;
-
-  li + li {
-    align-items: center;
+  li {
     display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 2rem;
+  }
+  li + li {
 
     @include mediaQuery.minWidth(1200px) {
       margin-left: 10px;
 
-      &::before {
-        content: '|';
-        display: inline-block;
-        margin-right: 10px;
-      }
     }
   }
 
@@ -71,6 +69,7 @@ $_namespace: 'footer';
 
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.5rem;
 }
 
 .component__footer__legal-row {

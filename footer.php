@@ -26,8 +26,11 @@
 		  <p class="component__footer__contact-list__item">
 			T: <a href="tel:<?php the_field('telephone', 'options');?>"><?php the_field('telephone', 'options');?></a>
 		  </p>
+          <p class="component__footer__contact-list__item">
+			M: <a href="tel:<?php the_field('mobile', 'options');?>"><?php the_field('mobile', 'options');?></a>
+		  </p>
 		</li>
-		<li>
+        <li>
 		  <p class="component__footer__contact-list__item">
 			E:
 			<a href="mailto:<?php the_field('email', 'options');?>"><?php the_field('email', 'options');?></a>
