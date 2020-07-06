@@ -68,6 +68,7 @@ get_header();?>
                     </div>
                 </div>
         </div>
+    </div>
         <?php $i++;?>
     <?php endwhile;?>
 <?php endif;?>
