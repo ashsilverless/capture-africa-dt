@@ -987,6 +987,13 @@ li p:first-of-type {
 .component__footer__contact-row__content {
   grid-column-end: span 2;
 }
+.component__footer__contact-row__content p a {
+  font-weight: 500;
+}
+
+main .grid__location--content p a, main .component__footer__contact-row__content p a {
+  font-weight: 400;
+}
 
 .component__footer__contact-name {
   color: currentColor;

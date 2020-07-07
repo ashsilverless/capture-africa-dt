@@ -28,8 +28,13 @@ $_namespace: 'footer';
   @extend .grid__location--content;
 
   grid-column-end: span 2;
+  p a {
+      font-weight: 500;
+  }
 }
-
+main .grid__location--content p a {
+    font-weight: 400;
+}
 .component__footer__contact-name {
   @extend %type__scale--6;
   color: currentColor;

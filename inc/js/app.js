@@ -215,6 +215,35 @@ $(document).ready(function () {
   // });
 
   try {
+   const experienceSliderHome = tns({
+     autoplay: false,
+     container: '.component__experience-slider__list',
+     gutter: 0,
+     items: 1,
+   mouseDrag: true,
+     mode: 'carousel',
+     nav: false,
+     nextButton: '.home-component__experience-slider__controls--next',
+     prevButton: '.home-component__experience-slider__controls--prev',
+     responsive: {
+       800: {
+         items: 2,
+         gutter: 20,
+       },
+       1100: {
+         items: 3,
+       },
+     },
+   });
+ } catch (error) {
+   /*console.group('Experience Slider');
+   console.error(error);
+   console.groupEnd();*/
+ }
+
+
+
+  try {
     const experienceSlider = tns({
       container: '.home-hero-slider',
       items: 1,
@@ -349,13 +378,19 @@ $('.gallery').each(function() { // the containers for all your galleries
 
 $('.toggle').click(function(event) {
   $(this).toggleClass('active');
-  $( this ).siblings( '.toggle' ).children( '.toggle__answer' ).slideUp( "slow", function() {
-    // Animation complete.
+  var currentSection = $(this);
+  $( this ).siblings( '.toggle' ).children( '.toggle__answer' ).slideUp( "slow", function () {
   });
+  function scrollToTop(){
+    $('html, body').animate({
+        scrollTop: $(currentSection).offset().top - 78
+    }, 'slow');
+    }
+    setTimeout(scrollToTop, 550);
   $( this ).siblings( '.toggle' ).removeClass('active');
   $( this ).children( '.toggle__answer' ).slideToggle( "slow", function() {
-    // Animation complete.
   });
+
 });
 $('.read-more-trigger').click(function(event) {
     $('.read-more-wrapper').addClass('expand');

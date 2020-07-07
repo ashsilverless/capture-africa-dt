@@ -93,7 +93,7 @@ get_header();?>
     <div
       class="grid__location--extra-wide-content component__experience-slider__wrapper"
     >
-      <div class="component__experience-slider__controls--prev">
+      <div class="home-component__experience-slider__controls--prev">
         <svg class="" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
           <path
             d="M0 15a15 15 0 1115 15A15.072 15.072 0 010 15zm6.82.624l6 5.987a.859.859 0 00.592.241.766.766 0 00.785-.785.827.827 0 00-.273-.592l-2.833-2.834-2.05-1.92 2.818.1h10.775a.777.777 0 00.832-.817.8.8 0 00-.832-.849H11.862l-2.833.1 2.065-1.922L13.927 9.5a.826.826 0 00.273-.592.766.766 0 00-.785-.785.794.794 0 00-.592.24l-6 6a.862.862 0 00-.288.624.879.879 0 00.285.637z"
@@ -132,7 +132,7 @@ get_header();?>
                 <?php endwhile;?>
             </ul>
             <?php endif;?>
-      <div class="component__experience-slider__controls--next">
+      <div class="home-component__experience-slider__controls--next">
         <svg
           class="icon--rotate-180"
           xmlns="http://www.w3.org/2000/svg"
