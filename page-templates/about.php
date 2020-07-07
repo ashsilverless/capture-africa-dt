@@ -86,7 +86,7 @@ get_header();?>
   </div>
 </div>
 
-<div class="page__grid">
+<div class="page__grid toggle-section">
     <?php if( have_rows('faq_items') ): ?>
         <?php while( have_rows('faq_items') ): the_row(); ?>
         <div class="grid__location--content toggle">

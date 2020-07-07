@@ -1434,6 +1434,10 @@ form.wpcf7-form .follow i:first-of-type {
   transform: rotate(90deg);
 }
 
+.toggle-section {
+  margin-bottom: 5rem;
+}
+
 .gallery {
   grid-column: 2/4;
   margin: 3rem 0 0;
