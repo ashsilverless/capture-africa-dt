@@ -42,6 +42,23 @@
   width: 100%;
 }
 
+/*===========EXTRA SMALL (576px)==========*/
+@media only screen and (max-width: 576px) {
+  /*---GLOBALS---*/
+  /*---HEADER---*/
+  /*---CONTENT---*/
+  .type__scale--2 {
+    font-size: 2rem;
+  }
+
+  .carousel-wrapper .component__experience-slider__controls--next,
+.carousel-wrapper .component__experience-slider__controls--prev {
+    display: none;
+  }
+
+  /*---FOOTER---*/
+}
+/*---end extra small mq---*/
 main > .page__grid:last-of-type {
   margin-bottom: 60px;
 }
@@ -418,6 +435,11 @@ li p:first-of-type {
   margin-top: 0;
 }
 
+@media only screen and (max-width: 576px) {
+  .type__scale--2 {
+    font-size: 1.8rem;
+  }
+}
 .component__app-bar {
   background-image: linear-gradient(1deg, transparent 30%, rgba(0, 0, 0, 0.5) 100%);
   position: fixed;
@@ -744,6 +766,10 @@ li p:first-of-type {
     grid-template-columns: none;
     grid-column-gap: 0;
   }
+  .component__expandable__item--style-1 .component__banner__hero .component__quote-slider__controls,
+.component__expandable__item--style-1 [data-expandable-content=true] .component__quote-slider__controls {
+    margin-top: -30px;
+  }
 }
 @media (max-width: 540px) {
   .component__expandable__item--style-1 .component__banner__content {
@@ -751,6 +777,9 @@ li p:first-of-type {
     justify-content: center;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .component__expandable__item--style-1 .component__banner__content .component__quote-slider__controls {
+    margin-top: -30px;
   }
 }
 
@@ -773,8 +802,11 @@ li p:first-of-type {
   margin-bottom: 20px;
 }
 
-.special-offer-details:not(:nth-of-type(2)) p {
-  text-transform: uppercase;
+.special-offer-details p {
+  color: #c37a6a;
+}
+
+.special-offer ul {
   color: #c37a6a;
 }
 
@@ -908,6 +940,16 @@ li p:first-of-type {
     transform: none;
   }
 }
+@media (max-width: 500px) {
+  .component__experience-slider .component__experience-slider__controls--prev,
+.component__experience-slider .component__experience-slider__controls--next {
+    display: none;
+  }
+  .component__experience-slider .component__experience-slider__controls--prev .component__quote-slider__controls,
+.component__experience-slider .component__experience-slider__controls--next .component__quote-slider__controls {
+    margin-top: -30px;
+  }
+}
 .component__experience-slider .component__experience-slider__controls--prev:hover,
 .component__experience-slider .component__experience-slider__controls--next:hover {
   color: white;
@@ -978,6 +1020,12 @@ li p:first-of-type {
   right: 10px;
 }
 
+@media only screen and (max-width: 576px) {
+  .carousel-wrapper .component__experience-slider__controls--next,
+.carousel-wrapper .component__experience-slider__controls--prev {
+    display: none;
+  }
+}
 .component__footer__contact-row {
   background-color: #353742;
   padding-top: 40px;
@@ -1268,6 +1316,14 @@ main .grid__location--content p a, main .component__footer__contact-row__content
     justify-content: flex-end;
   }
 }
+@media (max-width: 576px) {
+  .component__quote-slider__controls {
+    justify-content: flex-end;
+  }
+  .component__quote-slider__controls .component__quote-slider__controls {
+    margin-top: -30px;
+  }
+}
 
 .component__quote-slider__controls--prev {
   transform: rotate(180deg);
@@ -1277,6 +1333,11 @@ main .grid__location--content p a, main .component__footer__contact-row__content
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 576px) {
+  .component__quote-slider__controls {
+    margin-top: -30px;
+  }
+}
 .silverless-logo {
   text-align: center;
 }

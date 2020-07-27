@@ -4,7 +4,7 @@
 
 @use '../layout/background-media';
 @use '../layout/typography';
-@use '../utilities/media-query' as mediaQuery;
+@use '../utilities/media-query'as mediaQuery;
 @use '../variables';
 
 .component__quote {
@@ -70,14 +70,19 @@
 .component__quote-slider__controls {
   display: flex;
   justify-content: space-between;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
 
   @include mediaQuery.minWidth(900px) {
     justify-content: flex-end;
   }
+
+  @include mediaQuery.maxWidth(576px) {
+    justify-content: flex-end;
+  }
+
 }
 
 .component__quote-slider__controls--prev {
@@ -86,4 +91,10 @@
 
 .component__quote-slider__controls--next {
   margin-left: 20px;
+}
+
+@media only screen and(max-width: 576px) {
+  .component__quote-slider__controls {
+    margin-top: -30px;
+  }
 }

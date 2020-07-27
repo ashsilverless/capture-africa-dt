@@ -13,5 +13,37 @@
 @mixin maxWidth($value) {
   @include media('max-width', $value) {
     @content;
+
+    .component__quote-slider__controls {
+      margin-top: -30px;
+    }
   }
 }
+
+/*===========EXTRA SMALL (576px)==========*/
+
+@media only screen and(max-width: 576px) {
+  /*---GLOBALS---*/
+
+  /*---HEADER---*/
+
+
+  /*---CONTENT---*/
+
+  .type__scale--2 {
+    font-size: 2rem;
+  }
+
+  .carousel-wrapper {
+
+    .component__experience-slider__controls--next,
+    .component__experience-slider__controls--prev {
+      display: none;
+    }
+  }
+
+  /*---FOOTER---*/
+
+}
+
+/*---end extra small mq---*/

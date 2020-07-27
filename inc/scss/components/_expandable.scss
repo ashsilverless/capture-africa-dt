@@ -1,20 +1,20 @@
 @use '../utilities/media-query' as mediaQuery;
 @use '../variables';
 
-[data-expandable-container='true'] {
+[data-expandable-container="true"] {
 }
 
-[data-expandable-item='true'] {
+[data-expandable-item="true"] {
 }
 
-[data-expandable-is-expanded='true'] {
+[data-expandable-is-expanded="true"] {
 }
 
-[data-expandable-content='true'] {
+[data-expandable-content="true"] {
   max-height: 0;
   overflow: hidden;
 
-  [data-expandable-is-expanded='true'] & {
+  [data-expandable-is-expanded="true"] & {
     max-height: none;
   }
 }
@@ -36,7 +36,7 @@
   }
 
   .component__banner__hero,
-  [data-expandable-content='true'] {
+  [data-expandable-content="true"] {
     @include mediaQuery.maxWidth(800px) {
       grid-template-columns: none;
       grid-column-gap: 0;
@@ -67,41 +67,44 @@
   }
 }
 .destination-item {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-.special-offer-details:not(:nth-of-type(2)){
-    p {
-        text-transform: uppercase;
-        color: variables.$colour-brand-four;
-    }
+.special-offer-details {
+  p {
+    // text-transform: uppercase;
+    color: variables.$colour-brand-four;
+  }
 }
-
+.special-offer {
+  ul {
+    color: variables.$colour-brand-four;
+  }
+}
 .read-more-wrapper {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .5s ease;
-    &.expand {
-        max-height: 100vh;
-    }
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  &.expand {
+    max-height: 100vh;
+  }
 }
 .read-more-trigger {
-    transition: opacity .5s ease;
-    cursor: pointer;
-    &.hide {
-        opacity:0;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  &.hide {
+    opacity: 0;
+  }
+  &:hover {
+    .button-two__icon {
+      transform: rotate(90deg);
     }
-    &:hover {
-        .button-two__icon {
-            transform:rotate(90deg);
-        }
-    }
+  }
 }
 .button-three.expanding {
-    &:hover,
-    &.active {
-        .button-three__icon {
-            transform:rotate(90deg);
-        }
+  &:hover,
+  &.active {
+    .button-three__icon {
+      transform: rotate(90deg);
     }
-
+  }
 }

@@ -4,8 +4,8 @@
 
 @use '../layout/background-media';
 @use '../layout/typography';
-@use '../utilities/media-query' as mediaQuery;
-@use '../utilities' as utils;
+@use '../utilities/media-query'as mediaQuery;
+@use '../utilities'as utils;
 @use '../variables';
 
 /// Module Namespace
@@ -18,6 +18,8 @@ $_namespace: 'component__experience-slider';
 
   .tns-outer {
     display: grid;
+
+
   }
 
   @include utils.element('container') {
@@ -45,10 +47,16 @@ $_namespace: 'component__experience-slider';
     top: 0;
     transform: translateY(calc(-100% - 30px));
     transition: all .3s ease;
+
     @include mediaQuery.minWidth(500px) {
       position: initial;
       transform: none;
     }
+
+    @include mediaQuery.maxWidth(500px) {
+      display: none;
+    }
+
     &:hover {
       color: white;
     }
@@ -98,7 +106,7 @@ $_namespace: 'component__experience-slider';
       margin-top: 0;
     }
 
-    a + a {
+    a+a {
       margin-top: 40px;
 
       @include mediaQuery.minWidth(800px) {
@@ -111,17 +119,30 @@ $_namespace: 'component__experience-slider';
     }
   }
 }
+
 .carousel-wrapper {
+
+  .component__experience-slider__controls--next,
+  .component__experience-slider__controls--prev {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 10px;
+    margin-top: -15px;
+  }
+
+  .component__experience-slider__controls--next {
+    left: unset;
+    right: 10px;
+  }
+}
+
+@media only screen and(max-width: 576px) {
+  .carousel-wrapper {
+
     .component__experience-slider__controls--next,
     .component__experience-slider__controls--prev {
-        position: absolute;
-        z-index: 999;
-        top:50%;
-        left:10px;
-        margin-top:-15px;
+      display: none;
     }
-    .component__experience-slider__controls--next {
-        left:unset;
-        right:10px;
-    }
+  }
 }
