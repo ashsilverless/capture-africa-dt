@@ -51,14 +51,42 @@
     font-size: 2rem;
   }
 
+  .component__menu__title {
+    font-size: 2rem !important;
+  }
+
   .carousel-wrapper .component__experience-slider__controls--next,
 .carousel-wrapper .component__experience-slider__controls--prev {
-    display: none;
+    display: none !important;
+  }
+
+  .page-navigation__list {
+    display: none !important;
+  }
+
+  .component__banner__content {
+    min-height: 0 !important;
+    padding-top: 20px !important;
+  }
+
+  form.wpcf7-form .follow i:first-of-type {
+    margin-left: 0 !important;
+  }
+
+  .page-template-destinations .gallery {
+    grid-column: 1/4 !important;
   }
 
   /*---FOOTER---*/
 }
 /*---end extra small mq---*/
+/*===========EXTRA EXTRA SMALL (370px)==========*/
+@media only screen and (max-width: 370px) {
+  .type__scale--2 {
+    font-size: 1.4rem !important;
+  }
+}
+/*---end extra extra small mq---*/
 main > .page__grid:last-of-type {
   margin-bottom: 60px;
 }
