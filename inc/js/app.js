@@ -8,11 +8,9 @@ $(window).scroll(function() {
     if (scroll >= 100) {
         $("body").addClass("scrolled");
         navHeight = $(".component__app-bar").height();
-        console.log(navHeight);
     } else {
         $("body").removeClass("scrolled");
         navHeight = $(".component__app-bar").height();
-        console.log(navHeight);
     }
 });
 
@@ -214,53 +212,36 @@ $(document).ready(function () {
   //   );
   // });
 
-  try {
-   const experienceSliderHome = tns({
-     autoplay: false,
-     container: '.component__experience-slider__list',
-     gutter: 0,
-     items: 1,
-   mouseDrag: true,
-     mode: 'carousel',
-     nav: false,
-     nextButton: '.home-component__experience-slider__controls--next',
-     prevButton: '.home-component__experience-slider__controls--prev',
-     responsive: {
-       800: {
-         items: 2,
-         gutter: 20,
+if( $('body.home').length ){
+    try {
+     const experienceSliderHome = tns({
+       autoplay: false,
+       container: '.component__experience-slider__list',
+       gutter: 0,
+       items: 1,
+     mouseDrag: true,
+       mode: 'carousel',
+       nav: false,
+       nextButton: '.home-component__experience-slider__controls--next',
+       prevButton: '.home-component__experience-slider__controls--prev',
+       responsive: {
+         800: {
+           items: 2,
+           gutter: 20,
+         },
+         1100: {
+           items: 3,
+         },
        },
-       1100: {
-         items: 3,
-       },
-     },
-   });
- } catch (error) {
-   /*console.group('Experience Slider');
-   console.error(error);
-   console.groupEnd();*/
- }
+     });
+    } catch (error) {
+    }
+    }
 
 
 
-  try {
-    const experienceSlider = tns({
-      container: '.home-hero-slider',
-      items: 1,
-      autoplay: false,
-      nav: false,
-      prevButton: '.component__quote-slider__controls--prev',
-      nextButton: '.component__quote-slider__controls--next',
-      // gutter: 20,
-    });
-  } catch (error) {
-    /*console.group('Quote Slider');
-    console.error(error);
-    console.groupEnd();*/
-  }
-
-
-  try {
+if(window.location.pathname === '/about/'){
+try {
     const experienceSlider = tns({
       container: '.component__quote-slider__container',
       items: 1,
@@ -271,41 +252,41 @@ $(document).ready(function () {
       // gutter: 20,
     });
   } catch (error) {
-    /*console.group('Quote Slider');
-    console.error(error);
-    console.groupEnd();*/
   }
+}
 
 var numItems = $('.experience-block').length;
 var i = 1;
 for (i = 1; i < (numItems + 1); i++) {
 
-  try {
-    const experienceSlider = tns({
-      autoplay: false,
-      container: '.component__experience-slider__list' + [i],
-      gutter: 0,
-      items: 1,
-    mouseDrag: true,
-      mode: 'carousel',
-      nav: false,
-      nextButton: '.exp-next'+ [i],
-      prevButton: '.exp-prev'+ [i],
-      responsive: {
-        800: {
-          items: 1,
-        },
-        1100: {
-          items: 1,
-        },
-      },
-    });
-  } catch (error) {
-    /*console.group('Experience Slider');
-    console.error(error);
-    console.groupEnd();*/
-  }
+    if(window.location.pathname === '/experiences/'){
+        try {
+            const experienceSlider = tns({
+              autoplay: false,
+              container: '.component__experience-slider__list' + [i],
+              gutter: 0,
+              items: 1,
+            mouseDrag: true,
+              mode: 'carousel',
+              nav: false,
+              nextButton: '.exp-next'+ [i],
+              prevButton: '.exp-prev'+ [i],
+              responsive: {
+                800: {
+                  items: 1,
+                },
+                1100: {
+                  items: 1,
+                },
+              },
+            });
+          } catch (error) {
 
+          }
+    }
+
+
+if( $('body.home').length ){
   try {
     const experienceSlider = tns({
       autoplay: true,
@@ -328,11 +309,9 @@ for (i = 1; i < (numItems + 1); i++) {
       },
     });
   } catch (error) {
-    /*console.group('Experience Slider');
-    console.error(error);
-    console.groupEnd();*/
-  }
 
+  }
+}
 
 
 

@@ -76,7 +76,7 @@
 		            </text>
 		          </svg>
 		        </div></a
-		      ><a class="component__app-bar__logo-container" href="<?php echo get_site_url(); ?>"
+		      ><a class="component__app-bar__logo-container" id="homepage" href="<?php echo get_site_url(); ?>"
 		        >
 				<?php get_template_part('inc/img/capture-africa-logo');?>
 			</a>

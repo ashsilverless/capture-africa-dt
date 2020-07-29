@@ -119,6 +119,7 @@
         </div>
     </div>
 </footer>
+<div class="home-component__experience-slider__controls--prev home-component__experience-slider__controls--next component__quote-slider__controls--prev component__quote-slider__controls--next"></div>
 <?php wp_footer(); ?>
 </body>
 
