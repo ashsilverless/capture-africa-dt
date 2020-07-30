@@ -59,6 +59,16 @@ form.wpcf7-form .follow i:first-of-type {
         grid-column: 1/4 !important;
     }
 }
+.tns-outer {
+    margin-top: 0;
+}
+body .component__homepage-hero__content {
+    height: calc(100vh - 60px);
+    min-height: 0;
+    padding-top: 0;
+    margin-top: 40px;
+}
+
   /*---FOOTER---*/
 
 }

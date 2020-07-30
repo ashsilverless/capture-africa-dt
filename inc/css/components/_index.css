@@ -77,6 +77,17 @@
     grid-column: 1/4 !important;
   }
 
+  .tns-outer {
+    margin-top: 0;
+  }
+
+  body .component__homepage-hero__content {
+    height: calc(100vh - 60px);
+    min-height: 0;
+    padding-top: 0;
+    margin-top: 40px;
+  }
+
   /*---FOOTER---*/
 }
 /*---end extra small mq---*/
@@ -1260,6 +1271,14 @@ main .grid__location--content p a, main .component__footer__contact-row__content
 }
 .hero-wrapper .component__banner {
   margin-bottom: 5rem;
+}
+
+.page-navigation {
+  margin-top: 2rem;
+}
+
+.current-page {
+  color: white !important;
 }
 
 .page-navigation__list-item a:focus, .page-navigation__list-item a:hover {
